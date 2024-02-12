@@ -139,6 +139,7 @@ final class Util
         '435' => 'Delcred SCD S.A',
         '488' => 'JPMorgan Chase Bank',
         '751' => 'Scotiabank Brasil S.A. Banco Múltiplo',
+        '084' => 'Sisprime do Brasil - Cooperativa de Crédito',
         '409' => 'UNIBANCO - União de Bancos Brasileiros S.A.',
         '230' => 'Unicard Banco Múltiplo S.A.',
         '712' => 'Banco Ourinvest',
@@ -1008,6 +1009,7 @@ final class Util
             BoletoContract::COD_BANCO_PINE => 'Banco\\Pine',
             BoletoContract::COD_BANCO_OURINVEST => 'Banco\\Ourinvest',
             BoletoContract::COD_BANCO_SICREDI => 'Banco\\Sicredi',
+            BoletoContract::COD_BANCO_SISPRIME => 'Banco\\Sisprime',
             BoletoContract::COD_BANCO_BANCOOB => 'Banco\\Bancoob',
         ];
 
