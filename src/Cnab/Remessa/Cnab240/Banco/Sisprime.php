@@ -172,8 +172,8 @@ class Sisprime extends AbstractRemessa implements RemessaContract
         // $this->add(36, 36, CalculoDV::bradescoContaCorrente($this->getConta()));
         $this->add(36, 36, $this->getContaDv());
         $this->add(37, 37, '');
-        $this->add(38, 49, Util::formatCnab('9', $boleto->getNossoNumero(), 11));
-        $this->add(50, 57, '0000000');
+        $this->add(38, 49, str_pad($boleto->getNossoNumero(), 11, '0', STR_PAD_LEFT));
+        $this->add(50, 57, '00000000');
         $this->add(58, 58, '1'); //'1' = Cobrança Simples
         $this->add(59, 59, '1'); //'1' = Com Cadastramento (Cobrança Registrada)
         $this->add(60, 60, '1'); //'1' = Tradicional
