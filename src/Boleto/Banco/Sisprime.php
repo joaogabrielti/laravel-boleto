@@ -23,22 +23,11 @@ class Sisprime extends AbstractBoleto implements BoletoContract
      */
     protected $carteiras = ['09'];
     /**
-     * Trata-se de código utilizado para identificar mensagens especificas ao cedente, sendo
-     * que o mesmo consta no cadastro do Banco, quando não houver código cadastrado preencher
-     * com zeros "000".
-     *
-     * @var int
-     */
-    protected $cip = '000';
-    /**
      * Variaveis adicionais.
      *
      * @var array
      */
-    public $variaveis_adicionais = [
-        'cip' => '000',
-        'mostra_cip' => true,
-    ];
+    public $variaveis_adicionais = [];
     /**
      * Espécie do documento, código para remessa
      *
@@ -148,28 +137,5 @@ class Sisprime extends AbstractBoleto implements BoletoContract
             'nossoNumeroFull' => substr($campoLivre, 6, 11),
             'contaCorrente' => substr($campoLivre, 17, 7),
         ];
-    }
-
-    /**
-     * Define o campo CIP do boleto
-     *
-     * @param  int $cip
-     * @return Sisprime
-     */
-    public function setCip($cip)
-    {
-        $this->cip = $cip;
-        $this->variaveis_adicionais['cip'] = $this->getCip();
-        return $this;
-    }
-
-    /**
-     * Retorna o campo CIP do boleto
-     *
-     * @return string
-     */
-    public function getCip()
-    {
-        return Util::numberFormatGeral($this->cip, 3);
     }
 }
