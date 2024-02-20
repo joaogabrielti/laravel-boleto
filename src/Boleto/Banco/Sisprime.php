@@ -61,6 +61,20 @@ class Sisprime extends AbstractBoleto implements BoletoContract
      */
     protected $mostrarEnderecoFichaCompensacao = true;
     /**
+     * Constructor for the Sisprime class.
+     *
+     * @param array $params The parameters for the Sisprime class.
+     *                      - agencia: The agency number.
+     *                      - conta: The account number.
+     */
+    public function __construct($params = [])
+    {
+        $this->agenciaDv = CalculoDV::bradescoAgencia($params['agencia']);
+        $this->contaDv = CalculoDV::bradescoContaCorrente($params['conta']);
+
+        parent::__construct($params);
+    }
+    /**
      * Gera o Nosso Número. (Utiliza a mesma forma de gerar o 'Nosso Número' do Bradesco)
      *
      * @return string
